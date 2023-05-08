@@ -20,7 +20,8 @@
     "react-scripts": "5.0.1",
     "react-window": "^1.8.9",
     "web-vitals": "^2.1.4",
-    "css-select": "^5.0.1"
+    "css-select": "^5.0.1",
+    "nth-check": ">=2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
