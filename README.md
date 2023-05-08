@@ -32,10 +32,6 @@ capable to handle the current application requirements.
 # Usage
 After loading the application, the current date time will be prepopulated.
 Select any of the cameras found from the dropdown list to view the camera view.
-Using keystrokes, one may cycle through the time or date or months or even 
-# Usage
-After loading the application, the current date time will be prepopulated.
-Select any of the cameras found from the dropdown list to view the camera view.
 Using keystrokes(up/down), one may cycle through the time or date or months or even years fields to see time lapsed captured views from the selected camera.
 Use the VIEW NOW button to spring back to the current datetime
 
