@@ -30,3 +30,9 @@ popd
 
 # Access the react application (frontend)
 Open browser to `http://localhost:3000`
+
+
+# Note
+Backend is running `nestjs` mainly to serve the frontend react application.
+There is no backend codes at the moment as the frontend is more than
+capable to handle the current application requirements.
