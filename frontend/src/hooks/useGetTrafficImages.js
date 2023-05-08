@@ -15,7 +15,7 @@ export const useGetTrafficImages = (selectedDatetime, weatherData) => {
         }
       });
       const traffic_json = await traffic_res.json();
-      if (traffic_json?.items[0]?.cameras) {
+      if (traffic_json?.items?.[0]?.cameras) {
         traffic_json.items[0].cameras.forEach(camera => {
           if (Array.isArray(weatherData?.area_metadata) &&
               weatherData?.area_metadata.length > 0) {
