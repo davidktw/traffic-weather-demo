@@ -30,7 +30,6 @@ export const useGetTrafficImages = (selectedDatetime, weatherData) => {
               name: 'Singapore'
             }
           }
-          console.log(camera);
           const forecastData = weatherData?.items[0]?.forecasts?.find((area)=>area.area === camera.area.name);
           camera.area.forecast = forecastData ? forecastData.forecast : "";
         });
@@ -40,6 +39,8 @@ export const useGetTrafficImages = (selectedDatetime, weatherData) => {
         // return list of cameras
         return traffic_json.items[0];
       }
+      else
+        return {};
     },
     enabled: weatherData?.area_metadata !== undefined,
     staleTime: Infinity,
