@@ -2,7 +2,8 @@ import * as React from 'react';
 import { useState } from 'react';
 import {
   Box,
-  CssBaseline
+  CssBaseline,
+  Button
 } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -31,33 +32,43 @@ const App = () => {
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <Grid container spacing={2} justify="center">
-          <Grid item xs={6} sm={4}>
-            <DatePicker
-              sx={{ width: 1 }}
-              label="Select Date"
-              defaultValue={selectedDatetime}
-              format="DD/MM/YYYY"
-              onChange={(value) => {
-                const dt = dayjs(`${dayjs(value).format("YYYY-MM-DD")}T${dayjs(selectedDatetime).format("HH:mm:00")}`)
-                if (dt.toString() !== "Invalid Date")
-                  setSelectedDatetime(dt);
-              }}
-            />
+          <Grid container xs={8} sm={8}>
+            <Grid item xs={12} sm={6}>
+              <DatePicker
+                sx={{ width: 1 }}
+                label="Select Date"
+                value={selectedDatetime}
+                format="DD/MM/YYYY"
+                onChange={(value) => {
+                  const dt = dayjs(`${dayjs(value).format("YYYY-MM-DD")}T${dayjs(selectedDatetime).format("HH:mm:00")}`)
+                  if (dt.toString() !== "Invalid Date")
+                    setSelectedDatetime(dt);
+                }}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TimePicker
+                sx={{ width: 1 }}
+                label="Select Time"
+                value={selectedDatetime}
+                ampm={false}
+                onChange={(value) => {
+                  const dt = dayjs(`${dayjs(selectedDatetime).format("YYYY-MM-DD")}T${dayjs(value).format("HH:mm:00")}`);
+                  if (dt.toString() !== "Invalid Date")
+                    setSelectedDatetime(dt);
+                }}
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={6} sm={4}>
-            <TimePicker
-              sx={{ width: 1 }}
-              label="Select Time"
-              defaultValue={selectedDatetime}
-              ampm={false}
-              onChange={(value) => {
-                const dt = dayjs(`${dayjs(selectedDatetime).format("YYYY-MM-DD")}T${dayjs(value).format("HH:mm:00")}`);
-                if (dt.toString() !== "Invalid Date")
-                  setSelectedDatetime(dt);
-              }}
-            />
+          <Grid item xs={4} sm={4}>
+            <Button
+              sx={{ width: 1, height: 1 }}
+              variant="contained"
+              onClick={() => {
+                  setSelectedDatetime(dayjs());
+              }}>VIEW NOW</Button>
           </Grid>
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={12} sm={12}>
             <QueryClientProvider client={queryClient}>
               <LocationsListView
                 selectedDatetime={dayjs(selectedDatetime).format()}
