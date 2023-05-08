@@ -17,15 +17,7 @@ ln -s ../frontend/build public
 # Install the node modules and build the frontend and backend and run
 ```
 cd traffic-weather-demo
-pushd frontend
-npm ci
-npm run build
-popd 
-pushd backend
-npm ci
-npm run build
-npm run start:prod
-popd 
+./buildrun.sh
 ```
 
 # Access the react application (frontend)
