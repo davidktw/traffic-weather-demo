@@ -40,5 +40,5 @@ Using keystrokes(up/down), one may cycle through the time or date or months or e
 Use the VIEW NOW button to spring back to the current datetime
 
 # Screenshots
-[https://github.com/davidktw/traffic-weather-demo/screenshots/desktop.png?raw=true]
-[https://github.com/davidktw/traffic-weather-demo/screenshots/mobile.png?raw=true]
+![Desktop Screenshot](https://github.com/davidktw/traffic-weather-demo/blob/c210a54a466a3eccf2decd800bf682450698086b/screenshots/desktop.png?raw=true)
+![Mobile Screenshot](https://github.com/davidktw/traffic-weather-demo/blob/c210a54a466a3eccf2decd800bf682450698086b/screenshots/mobile.png?raw=true)
