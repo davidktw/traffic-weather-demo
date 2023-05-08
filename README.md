@@ -27,4 +27,4 @@ ln -s ../frontend/build public
 ```
 
 # Access the react application (frontend)
-Open browser to [http://localhost:3000][http://localhost:3000]
+Open browser to `http://localhost:3000`
