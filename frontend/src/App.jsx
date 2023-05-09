@@ -33,7 +33,7 @@ const App = () => {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <Grid container spacing={2} justify="center">
           <Grid container xs={8} sm={8}>
-            <Grid item xs={12} sm={6}>
+            <Grid xs={12} sm={6}>
               <DatePicker
                 sx={{ width: 1 }}
                 label="Select Date"
@@ -46,7 +46,7 @@ const App = () => {
                 }}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid xs={12} sm={6}>
               <TimePicker
                 sx={{ width: 1 }}
                 label="Select Time"
@@ -60,7 +60,7 @@ const App = () => {
               />
             </Grid>
           </Grid>
-          <Grid item xs={4} sm={4}>
+          <Grid xs={4} sm={4}>
             <Button
               sx={{ width: 1, height: 1 }}
               variant="contained"
@@ -68,7 +68,7 @@ const App = () => {
                   setSelectedDatetime(dayjs());
               }}>VIEW NOW</Button>
           </Grid>
-          <Grid item xs={12} sm={12}>
+          <Grid xs={12} sm={12}>
             <QueryClientProvider client={queryClient}>
               <LocationsListView
                 selectedDatetime={dayjs(selectedDatetime).format()}
@@ -77,13 +77,12 @@ const App = () => {
             </QueryClientProvider>
           </Grid>
           <Grid container xs={12} sm={12} direction="row-reverse">
-            <Grid item xs={12} sm={4}>
+            <Grid xs={12} sm={4}>
               <WeatherView selectedLocation={selectedLocation}/>
             </Grid>
-            <Grid item xs={12} sm={8}>
+            <Grid xs={12} sm={8}>
               <CameraView selectedLocation={selectedLocation}/>
             </Grid>
-            
           </Grid>
         </Grid>
       </LocalizationProvider>
