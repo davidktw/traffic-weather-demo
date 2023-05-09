@@ -29,7 +29,7 @@ export default function LocationsListView({selectedDatetime, onChange}) {
       const foundcam = trafficImagesData?.cameras?.find((c) => c.camera_id === selectedLocation) || "";
       typeof onChange === 'function' && onChange(foundcam);
     }
-  });
+  }, [trafficImagesData, setSelectedLocation]);
 
   return (
     <Box>
