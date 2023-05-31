@@ -34,7 +34,10 @@ export const useGetTrafficImages = (selectedDatetime, weatherData) => {
           camera.area.forecast = forecastData ? forecastData.forecast : "";
         });
         traffic_json.items[0].cameras =
-          traffic_json.items[0].cameras.toSorted((a, b) => a.camera_id - b.camera_id);
+          traffic_json.items[0].cameras.toSorted((a, b) => {
+            const areaEquality = a.area.name.localeCompare(b.area.name);
+            return areaEquality === 0 ? a.camera_id - b.camera_id : areaEquality;
+          });
   
         // return list of cameras
         return traffic_json.items[0];
